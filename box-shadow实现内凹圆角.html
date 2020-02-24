@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="javascript," />
+  <meta name="keywords" content="css, box-shadow," />
 
 
 
@@ -100,19 +100,22 @@
 
 
 
-<meta name="description" content="javascript 的数据传递 内存的分配方式 内存的访问机制   基础知识都知道, 在 ECMA2015 中 javascript 数据类型分为两种 基础类型: 比如Undefined, Null, Boolean, Number, String。 引用类型: 比如Object, Array, Function, Date等。   javascript对不同的数据类型有不同的分配内存方式 基础">
+<meta name="description" content="前言接到需求是做一个优惠券的功能, 优惠券的卡片涉及到了内凹圆角的效果, 通过 box-shadow 实现一波, 实现后的效果图是这样滴">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Javascript中的数据传递">
-<meta property="og:url" content="https://imaxing.github.io/blog/javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92.html">
+<meta property="og:title" content="Box-Shadow实现内凹圆角">
+<meta property="og:url" content="https://imaxing.github.io/blog/box-shadow%E5%AE%9E%E7%8E%B0%E5%86%85%E5%87%B9%E5%9C%86%E8%A7%92.html">
 <meta property="og:site_name" content="cookie 大胖砸">
-<meta property="og:description" content="javascript 的数据传递 内存的分配方式 内存的访问机制   基础知识都知道, 在 ECMA2015 中 javascript 数据类型分为两种 基础类型: 比如Undefined, Null, Boolean, Number, String。 引用类型: 比如Object, Array, Function, Date等。   javascript对不同的数据类型有不同的分配内存方式 基础">
-<meta property="og:image" content="https://cdn.iluoy.com/uploads/articles/9104e579085a73bbfdbf757f95821c32.png">
-<meta property="article:published_time" content="2018-02-24T14:01:46.000Z">
-<meta property="article:modified_time" content="2018-02-24T14:01:46.000Z">
+<meta property="og:description" content="前言接到需求是做一个优惠券的功能, 优惠券的卡片涉及到了内凹圆角的效果, 通过 box-shadow 实现一波, 实现后的效果图是这样滴">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybpgy1gc7upmo3vpj319x0u0te3.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybpgy1gc7ust2zi8j30og0dct98.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/0082zybpgy1gc7uzv6xfrj30ru0fcabg.jpg">
+<meta property="og:image" content="https://cdn.iluoy.com/uploads/articles/b308a8930d2b0343883ca3c73287ab26.png">
+<meta property="article:published_time" content="2020-02-24T14:10:44.000Z">
+<meta property="article:modified_time" content="2020-02-24T14:10:44.000Z">
 <meta property="article:author" content="Gexing">
-<meta property="article:tag" content="javascript">
+<meta property="article:tag" content="css, box-shadow">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.iluoy.com/uploads/articles/9104e579085a73bbfdbf757f95821c32.png">
+<meta name="twitter:image" content="https://tva1.sinaimg.cn/large/0082zybpgy1gc7upmo3vpj319x0u0te3.jpg">
 
 
 
@@ -142,13 +145,13 @@
 
 
 
-  <link rel="canonical" href="https://imaxing.github.io/blog/javascript中的数据传递.html"/>
+  <link rel="canonical" href="https://imaxing.github.io/blog/box-shadow实现内凹圆角.html"/>
 
 
 
 
 
-  <title>Javascript中的数据传递 | cookie 大胖砸</title>
+  <title>Box-Shadow实现内凹圆角 | cookie 大胖砸</title>
   
 
 
@@ -295,7 +298,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://imaxing.github.io/blog/blog/javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92.html">
+    <link itemprop="mainEntityOfPage" href="https://imaxing.github.io/blog/blog/box-shadow%E5%AE%9E%E7%8E%B0%E5%86%85%E5%87%B9%E5%9C%86%E8%A7%92.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gexing">
@@ -312,7 +315,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Javascript中的数据传递</h1>
+          <h1 class="post-title" itemprop="name headline">Box-Shadow实现内凹圆角</h1>
         
 
         <div class="post-meta">
@@ -322,8 +325,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-24T22:01:46+08:00">
-                2018-02-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-24T22:10:44+08:00">
+                2020-02-24
               </time>
             
 
@@ -343,8 +346,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">javascript</span>
+                  <a href="/blog/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
                   </a>
                 </span>
 
@@ -361,8 +364,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/blog/javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blog/javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92.html" itemprop="commentCount"></span>
+                <a href="/blog/box-shadow%E5%AE%9E%E7%8E%B0%E5%86%85%E5%87%B9%E5%9C%86%E8%A7%92.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/box-shadow%E5%AE%9E%E7%8E%B0%E5%86%85%E5%87%B9%E5%9C%86%E8%A7%92.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -390,48 +393,19 @@
       
 
       
-        <h4 id="javascript-的数据传递"><a href="#javascript-的数据传递" class="headerlink" title="javascript 的数据传递"></a>javascript 的数据传递</h4><ul>
-<li>内存的分配方式</li>
-<li>内存的访问机制</li>
+        <h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>接到需求是做一个优惠券的功能, 优惠券的卡片涉及到了内凹圆角的效果, 通过 box-shadow 实现一波, 实现后的效果图是这样滴<br><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc7upmo3vpj319x0u0te3.jpg" alt="实现后的效果图"></p>
+<a id="more"></a>
+
+<hr>
+<h4 id="我想到的思路是这样的"><a href="#我想到的思路是这样的" class="headerlink" title="我想到的思路是这样的"></a>我想到的思路是这样的</h4><ul>
+<li>首先上下分别一个div 拼成一块, 形成这样的效果<br><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc7ust2zi8j30og0dct98.jpg" alt=""></li>
+<li>然后分别使用两个 div 的伪元素画两个圆定位在两个 div 对接的边上, 效果图看起来是这样滴<br><img src="https://tva1.sinaimg.cn/large/0082zybpgy1gc7uzv6xfrj30ru0fcabg.jpg" alt=""></li>
+<li>注意这里的 div1, div2 不要给背景色, 效果图的背景颜色通过 box-shadow 的颜色进行覆盖进行实现, 然后伪元素的颜色给白色, <em>这里有一个缺点就是没能实现内凹透明的效果, 如果页面的底色不是白色, 那么需要手动修改伪元素 box-shadow 的颜色值进行同步才行</em></li>
 </ul>
 <hr>
-<h4 id="基础知识都知道-在-ECMA2015-中-javascript-数据类型分为两种"><a href="#基础知识都知道-在-ECMA2015-中-javascript-数据类型分为两种" class="headerlink" title="基础知识都知道, 在 ECMA2015 中 javascript 数据类型分为两种"></a>基础知识都知道, 在 ECMA2015 中 javascript 数据类型分为两种</h4><ul>
-<li>基础类型: 比如Undefined, Null, Boolean, Number, String。</li>
-<li>引用类型: 比如Object, Array, Function, Date等。</li>
-</ul>
-<hr>
-<h4 id="javascript对不同的数据类型有不同的分配内存方式"><a href="#javascript对不同的数据类型有不同的分配内存方式" class="headerlink" title="javascript对不同的数据类型有不同的分配内存方式"></a>javascript对不同的数据类型有不同的分配内存方式</h4><ul>
-<li>基础数据类型的值, 比较简单明了, 不会占据太大的内存控件, 一般是直接存放在栈内存中</li>
-<li>引用数据类型的值, 有时候根据业务场景会比较复杂, 所以不适合放在栈内存中, 所以引用数据存放在占内存中的只是一个对于该变量的值在堆内存中的一个引用地址</li>
-</ul>
-<hr>
-<h4 id="既然内存的分配方式不同-那么变量的查找机制肯定也是不同的"><a href="#既然内存的分配方式不同-那么变量的查找机制肯定也是不同的" class="headerlink" title="既然内存的分配方式不同, 那么变量的查找机制肯定也是不同的"></a>既然内存的分配方式不同, 那么变量的查找机制肯定也是不同的</h4><ul>
-<li>基础数据类型的值占据的内存空间一般是固定的, 所以被存在栈中, 那么查找基础数据类型的时候, 比较迅速</li>
-<li>而引用类型的值比较复杂, 可能会比较庞大, 也有可能会比较小, 所以被存在堆内存中<br>如果将引用类型的内存分配到栈内存中, 大小一直在变化, 会降低查找的效率, 当查找一个引用数据类型的变量的时候首先会找到存在栈内存中的一个位置, 这个位置存放着值在堆内存的引用地址, 然后根据这个地址去堆内存中去查找</li>
-</ul>
-<hr>
-<p> 在《JavaScript高级程序设计》第三版 4.1.3，讲到传递参数：</p>
-<blockquote>
-<p>ECMAScript中所有函数的参数都是按值传递的。<br>也就是说，把函数外部的值复制给函数内部的参数，就和把值从一个变量复制到另一个变量一样。</p>
-</blockquote>
-<p>比如:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">v</span>) </span>&#123;</span><br><span class="line">    v = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(v); <span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line">foo(value);</span><br><span class="line"><span class="built_in">console</span>.log(value) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-<p>将 <code>value</code> 传递给 <code>foo</code> 函数后, 在函数内部改变了<code>v</code>的值, 但是没有改变外部<code>value</code>的值, 这就是按值传递</p>
-<p>再看:</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    <span class="keyword">value</span>: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function">function <span class="title">foo</span>(<span class="params">o</span>)</span> &#123;</span><br><span class="line">    o.<span class="keyword">value</span> = <span class="number">2</span>;</span><br><span class="line">    console.log(o.<span class="keyword">value</span>); <span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line">foo(obj);</span><br><span class="line">console.log(obj.<span class="keyword">value</span>) <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
-<p>将 <code>obj</code> 传递给 <code>foo</code> 函数后, 在函数内部改变了<code>o.value</code>的值,  这个时候外部的 <code>obj.value</code>同样被改变了,那么这时候 <strong>把函数外部的值复制给函数内部的参数</strong>这个说话就不成立了</p>
-<hr>
-<h4 id="数据传递有三种"><a href="#数据传递有三种" class="headerlink" title="数据传递有三种"></a>数据传递有三种</h4><ul>
-<li>按值传递</li>
-<li>引用传递</li>
-<li>共享传递</li>
-</ul>
-<p>第一个例子中就是按值传递, 将外部的值 copy 一份传递到函数内部, 改变值也是改变的 copy 过来的副本的值, 所以不会影响外部的变量的值<br>第二个例子中是引用传递, 因为上面讲到了变量值的内存分配方式和访问机制, 所以在第二个例子中, 函数外部的变量传递给函数内部后, 两个位置的变量保存的都是外部变量值都是从栈内存中找到的指向堆内存的地址, 所以在函数内部去修改 <code>obj</code>的时候, 外部也是指向的这个内存地址, 所以修改都都会发生变化</p>
-<p>再看共享传递</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> obj = &#123;</span><br><span class="line">    value: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">o</span>) </span>&#123;</span><br><span class="line">    o = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(o); <span class="comment">//2</span></span><br><span class="line">&#125;</span><br><span class="line">foo(obj);</span><br><span class="line"><span class="built_in">console</span>.log(obj.value) <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-<p>将 obj 传递给函数后在函数内部直接修改了 obj 的数据类型, 在上面修改 o.value 可以通过引用地址查找到引用地址去修改堆内存中的值, 但是直接修改<code>o</code>就不会去根据引用地址去查找原值进行修改, 所以外部没有发生变化</p>
-<hr>
-<p>灵魂画手更新个图<br><img src="https://cdn.iluoy.com/uploads/articles/9104e579085a73bbfdbf757f95821c32.png" alt="file"></p>
+<h4 id="完整代码"><a href="#完整代码" class="headerlink" title="完整代码"></a>完整代码</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"ch"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span></span><br><span class="line">        body &#123;</span><br><span class="line">            background: cyan;</span><br><span class="line"><span class="css">            <span class="comment">/* 圆角半径 */</span></span></span><br><span class="line">            --radiusWidth: 18px;</span><br><span class="line"><span class="css">            <span class="comment">/*盒子宽度*/</span></span></span><br><span class="line">            --box-width: 300px;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> &#123;</span></span><br><span class="line">            width: var(--box-width);</span><br><span class="line">            height: 200px;</span><br><span class="line">            margin: 100px auto;</span><br><span class="line">            position: relative;</span><br><span class="line">            overflow: hidden;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> &gt; <span class="selector-tag">div</span> &#123;</span></span><br><span class="line">            position: relative;</span><br><span class="line">            width: 100%;</span><br><span class="line">            height: 50%;</span><br><span class="line">            overflow: hidden;</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> &gt; <span class="selector-tag">div</span> &gt; <span class="selector-tag">span</span> &#123;</span></span><br><span class="line">            position: relative;</span><br><span class="line">            z-index: 200;</span><br><span class="line">            display: block;</span><br><span class="line"><span class="css">            <span class="comment">/* 内容两边不要超过圆角 */</span></span></span><br><span class="line">            width: calc(var(--box-width) - var(--radiusWidth) * 2);</span><br><span class="line">            margin: 0 auto;</span><br><span class="line">            height: 100%;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> <span class="selector-class">.top</span><span class="selector-pseudo">::after</span>,</span></span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> <span class="selector-class">.bottom</span><span class="selector-pseudo">::after</span>,</span></span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> <span class="selector-class">.top</span><span class="selector-pseudo">::before</span>,</span></span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> <span class="selector-class">.bottom</span><span class="selector-pseudo">::before</span> &#123;</span></span><br><span class="line">            position: absolute;</span><br><span class="line">            width: calc(var(--radiusWidth) * 2);</span><br><span class="line">            height: calc(var(--radiusWidth) * 2);</span><br><span class="line">            border-radius: 50%;</span><br><span class="line">            z-index: 10;</span><br><span class="line">            content: '';</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> <span class="selector-class">.top</span><span class="selector-pseudo">::after</span>, <span class="selector-id">#app</span> <span class="selector-class">.top</span><span class="selector-pseudo">::before</span> &#123;</span></span><br><span class="line">            bottom: calc(var(--radiusWidth) * -1);</span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 1<span class="selector-tag">px</span> 0<span class="selector-tag">px</span> 7<span class="selector-tag">px</span> 250<span class="selector-tag">px</span> <span class="selector-tag">RGBA</span>(247, 140, 108, 1<span class="selector-class">.00</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> <span class="selector-class">.bottom</span><span class="selector-pseudo">::after</span>, <span class="selector-id">#app</span> <span class="selector-class">.bottom</span><span class="selector-pseudo">::before</span> &#123;</span></span><br><span class="line">            top: calc(var(--radiusWidth) * -1);</span><br><span class="line"><span class="css">            <span class="selector-tag">box-shadow</span>: 1<span class="selector-tag">px</span> 0<span class="selector-tag">px</span> 7<span class="selector-tag">px</span> 250<span class="selector-tag">px</span> <span class="selector-id">#aaa</span>;</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> <span class="selector-class">.top</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line">            left: calc(var(--radiusWidth) * -1);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> <span class="selector-class">.top</span><span class="selector-pseudo">::before</span> &#123;</span></span><br><span class="line">            right: calc(var(--radiusWidth) * -1);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> <span class="selector-class">.bottom</span><span class="selector-pseudo">::after</span> &#123;</span></span><br><span class="line">            left: calc(var(--radiusWidth) * -1);</span><br><span class="line">        &#125;</span><br><span class="line"><span class="css">        <span class="selector-id">#app</span> <span class="selector-class">.bottom</span><span class="selector-pseudo">::before</span> &#123;</span></span><br><span class="line">            right: calc(var(--radiusWidth) * -1);</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"top"</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 内容 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>123<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bottom"</span>&gt;</span></span><br><span class="line">            <span class="comment">&lt;!-- 内容 --&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span>&gt;</span>456<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="demo预览"><a href="#demo预览" class="headerlink" title="demo预览"></a>demo预览</h4><p><img src="https://cdn.iluoy.com/uploads/articles/b308a8930d2b0343883ca3c73287ab26.png" alt="效果图"></p>
 
       
     </div>
@@ -481,7 +455,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://imaxing.github.io/blog/javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92.html" title="Javascript中的数据传递">https://imaxing.github.io/blog/javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92.html</a>
+    <a href="https://imaxing.github.io/blog/box-shadow%E5%AE%9E%E7%8E%B0%E5%86%85%E5%87%B9%E5%9C%86%E8%A7%92.html" title="Box-Shadow实现内凹圆角">https://imaxing.github.io/blog/box-shadow%E5%AE%9E%E7%8E%B0%E5%86%85%E5%87%B9%E5%9C%86%E8%A7%92.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -496,7 +470,7 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/javascript/" rel="tag"># javascript</a>
+            <a href="/blog/tags/css-box-shadow/" rel="tag"># css, box-shadow</a>
           
         </div>
       
@@ -509,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/javascript%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.html" rel="next" title="Javascript 中的执行上下文">
-                <i class="fa fa-chevron-left"></i> Javascript 中的执行上下文
+              <a href="/blog/%E6%94%B9%E5%8F%98%20Mac%20Launchpad%20%E5%9B%BE%E6%A0%87%E7%9A%84%E5%A4%A7%E5%B0%8F.html" rel="next" title="改变 Mac Launchpad 图标的大小">
+                <i class="fa fa-chevron-left"></i> 改变 Mac Launchpad 图标的大小
               </a>
             
           </div>
@@ -518,10 +492,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/hello-world.html" rel="prev" title="Hello World">
-                Hello World <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -722,7 +692,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript-的数据传递"><span class="nav-number">1.</span> <span class="nav-text">javascript 的数据传递</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基础知识都知道-在-ECMA2015-中-javascript-数据类型分为两种"><span class="nav-number">2.</span> <span class="nav-text">基础知识都知道, 在 ECMA2015 中 javascript 数据类型分为两种</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#javascript对不同的数据类型有不同的分配内存方式"><span class="nav-number">3.</span> <span class="nav-text">javascript对不同的数据类型有不同的分配内存方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#既然内存的分配方式不同-那么变量的查找机制肯定也是不同的"><span class="nav-number">4.</span> <span class="nav-text">既然内存的分配方式不同, 那么变量的查找机制肯定也是不同的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据传递有三种"><span class="nav-number">5.</span> <span class="nav-text">数据传递有三种</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#我想到的思路是这样的"><span class="nav-number">2.</span> <span class="nav-text">我想到的思路是这样的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#完整代码"><span class="nav-number">3.</span> <span class="nav-text">完整代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#demo预览"><span class="nav-number">4.</span> <span class="nav-text">demo预览</span></a></li></ol></div>
             
 
           </div>
