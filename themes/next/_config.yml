@@ -250,7 +250,7 @@ post_wordcount:
   #description: ex. subscribe to my blog by scanning my public wechat account
 
 # Reward
-reward_comment: Donate comment here
+reward_comment: 亲, 一分也是爱 ^_^
 wechatpay: https://tva1.sinaimg.cn/large/0082zybpgy1gc7gqxp3prj30ly0lsn28.jpg
 alipay: https://tva1.sinaimg.cn/large/0082zybpgy1gc7grlsc0vj30m00lgjzu.jpg
 #bitcoin: /images/bitcoin.png
@@ -386,12 +386,12 @@ changyan:
 # You can get your appid and appkey from https://leancloud.cn
 # more info please open https://valine.js.org
 valine:
-  enable: false
-  appid:  # your leancloud application appid
-  appkey:  # your leancloud application appkey
-  notify: false # mail notifier , https://github.com/xCss/Valine/wiki
+  enable: true
+  appid: v26ErQzKsbEvdBcgxRs6X4Bv-gzGzoHsz
+  appkey: Puan0iVFBUszEYHVuyT8roir
+  notify: true # mail notifier , https://github.com/xCss/Valine/wiki
   verify: false # Verification code
-  placeholder: Just go go # comment box placeholder
+  placeholder: 友善评论 # comment box placeholder
   avatar: mm # gravatar style
   guest_info: nick,mail,link # custom comment header
   pageSize: 10 # pagination size
