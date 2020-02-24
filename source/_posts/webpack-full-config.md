@@ -8,7 +8,7 @@ tags:
 ---
 
 #### 此配置涵盖了目前 webpack4 的大部分配置, 方便查询
-
+<!-- more -->
 ```javascript
 const path = require('path');
 
