@@ -397,7 +397,8 @@
 <li>函数上下文的变量对象叫做 (activation Object, AO)</li>
 <li>函数上下文的变量对象初始化只包括<code>arguments</code></li>
 <li>进入了函数上下文, 变量对象才会被激活, 变量对象中的属性才可以访问</li>
-<li>变量对象: <code>arguments</code>, <code>函数的形参</code>, <code>函数声明 var fun = function(){}</code>, <code>局部变量</code></li>
+<li>变量对象: <code>arguments</code>, <code>函数的形参</code>, <code>函数声明 var fun = function(){}</code>, <code>局部变量</code><a id="more"></a>
+</li>
 </ul>
 <hr>
 <h4 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h4><p>由多个执行上下文的变量对象构成的链表就叫做作用域链。函数有一个内部属性 [[scope]]，当函数创建的时候，就会保存所有父变量对象到其中, [[scope]] 就是所有父变量对象的层级链<br>函数执行之前先创建一个 AO, 这个 AO 会被压入作用域链顶端,而函数的 scope 属性会被连接到后续的对象, 所以查找顺序是先从 AO 开始查找</p>

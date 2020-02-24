@@ -999,16 +999,14 @@
 
       
         
-          
-          javascript 的数据传递
-内存的分配方式
-内存的访问机制
-
-
-基础知识都知道, 在 ECMA2015 中 javascript 数据类型分为两种
-基础类型: 比如Undefined, Null, Boolean, Number, String。
-引用类型: 比如Object, Array, 
-          ...
+          <h4 id="javascript-的数据传递"><a href="#javascript-的数据传递" class="headerlink" title="javascript 的数据传递"></a>javascript 的数据传递</h4><ul>
+<li>内存的分配方式</li>
+<li>内存的访问机制</li>
+</ul>
+<hr>
+<h4 id="基础知识都知道-在-ECMA2015-中-javascript-数据类型分为两种"><a href="#基础知识都知道-在-ECMA2015-中-javascript-数据类型分为两种" class="headerlink" title="基础知识都知道, 在 ECMA2015 中 javascript 数据类型分为两种"></a>基础知识都知道, 在 ECMA2015 中 javascript 数据类型分为两种</h4><ul>
+<li>基础类型: 比如Undefined, Null, Boolean, Number, String。</li>
+<li>引用类型: 比如Object, Array, Function, Date等。
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92.html#more" rel="contents">
@@ -1160,16 +1158,16 @@
 
       
         
-          
-          起步
-当执行一个函数的时候，就会创建一个执行上下文，并且压入执行上下文栈，当函数执行完毕的时候，就会将函数的执行上下文从栈中弹出
-
-
-执行上下文创建过程
-进入函数上下文创建变量对象
-函数上下文的变量对象叫做 (activation Object, AO)
-函数上下文的变量对象初始化只包括argume
-          ...
+          <h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><blockquote>
+<p>当执行一个函数的时候，就会创建一个执行上下文，并且压入执行上下文栈，当函数执行完毕的时候，就会将函数的执行上下文从栈中弹出</p>
+</blockquote>
+<hr>
+<h4 id="执行上下文创建过程"><a href="#执行上下文创建过程" class="headerlink" title="执行上下文创建过程"></a>执行上下文创建过程</h4><ul>
+<li>进入函数上下文创建变量对象</li>
+<li>函数上下文的变量对象叫做 (activation Object, AO)</li>
+<li>函数上下文的变量对象初始化只包括<code>arguments</code></li>
+<li>进入了函数上下文, 变量对象才会被激活, 变量对象中的属性才可以访问</li>
+<li>变量对象: <code>arguments</code>, <code>函数的形参</code>, <code>函数声明 var fun = function(){}</code>, <code>局部变量</code>
           <!--noindex-->
           <div class="post-button text-center">
             <a class="btn" href="/blog/javascript%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.html#more" rel="contents">
