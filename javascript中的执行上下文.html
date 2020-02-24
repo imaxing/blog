@@ -89,7 +89,7 @@
 
 
 
-  <meta name="keywords" content="test," />
+  <meta name="keywords" content="javascript," />
 
 
 
@@ -100,16 +100,16 @@
 
 
 
-<meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="description" content="起步 当执行一个函数的时候，就会创建一个执行上下文，并且压入执行上下文栈，当函数执行完毕的时候，就会将函数的执行上下文从栈中弹出   执行上下文创建过程 进入函数上下文创建变量对象 函数上下文的变量对象叫做 (activation Object, AO) 函数上下文的变量对象初始化只包括arguments 进入了函数上下文, 变量对象才会被激活, 变量对象中的属性才可以访问 变量对象: argum">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://imaxing.github.io/blog/hello-world.html">
+<meta property="og:title" content="Javascript 中的执行上下文">
+<meta property="og:url" content="https://imaxing.github.io/blog/javascript%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.html">
 <meta property="og:site_name" content="cookie 大胖砸">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
-<meta property="article:published_time" content="2020-02-24T09:21:01.799Z">
-<meta property="article:modified_time" content="2020-02-24T09:21:01.799Z">
+<meta property="og:description" content="起步 当执行一个函数的时候，就会创建一个执行上下文，并且压入执行上下文栈，当函数执行完毕的时候，就会将函数的执行上下文从栈中弹出   执行上下文创建过程 进入函数上下文创建变量对象 函数上下文的变量对象叫做 (activation Object, AO) 函数上下文的变量对象初始化只包括arguments 进入了函数上下文, 变量对象才会被激活, 变量对象中的属性才可以访问 变量对象: argum">
+<meta property="article:published_time" content="2018-02-24T13:50:22.000Z">
+<meta property="article:modified_time" content="2018-02-24T13:50:22.000Z">
 <meta property="article:author" content="Gexing">
-<meta property="article:tag" content="test">
+<meta property="article:tag" content="javascript">
 <meta name="twitter:card" content="summary">
 
 
@@ -140,13 +140,13 @@
 
 
 
-  <link rel="canonical" href="https://imaxing.github.io/blog/hello-world.html"/>
+  <link rel="canonical" href="https://imaxing.github.io/blog/javascript中的执行上下文.html"/>
 
 
 
 
 
-  <title>Hello World | cookie 大胖砸</title>
+  <title>Javascript 中的执行上下文 | cookie 大胖砸</title>
   
 
 
@@ -293,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://imaxing.github.io/blog/blog/hello-world.html">
+    <link itemprop="mainEntityOfPage" href="https://imaxing.github.io/blog/blog/javascript%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Gexing">
@@ -310,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hello World</h1>
+          <h1 class="post-title" itemprop="name headline">Javascript 中的执行上下文</h1>
         
 
         <div class="post-meta">
@@ -320,8 +320,8 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-24T17:21:01+08:00">
-                2020-02-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-02-24T21:50:22+08:00">
+                2018-02-24
               </time>
             
 
@@ -341,8 +341,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/blog/categories/test/" itemprop="url" rel="index">
-                    <span itemprop="name">test</span>
+                  <a href="/blog/categories/javascript/" itemprop="url" rel="index">
+                    <span itemprop="name">javascript</span>
                   </a>
                 </span>
 
@@ -359,8 +359,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/blog/hello-world.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/blog/hello-world.html" itemprop="commentCount"></span>
+                <a href="/blog/javascript%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/blog/javascript%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -388,19 +388,46 @@
       
 
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+        <h4 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h4><blockquote>
+<p>当执行一个函数的时候，就会创建一个执行上下文，并且压入执行上下文栈，当函数执行完毕的时候，就会将函数的执行上下文从栈中弹出</p>
+</blockquote>
+<hr>
+<h4 id="执行上下文创建过程"><a href="#执行上下文创建过程" class="headerlink" title="执行上下文创建过程"></a>执行上下文创建过程</h4><ul>
+<li>进入函数上下文创建变量对象</li>
+<li>函数上下文的变量对象叫做 (activation Object, AO)</li>
+<li>函数上下文的变量对象初始化只包括<code>arguments</code></li>
+<li>进入了函数上下文, 变量对象才会被激活, 变量对象中的属性才可以访问</li>
+<li>变量对象: <code>arguments</code>, <code>函数的形参</code>, <code>函数声明 var fun = function(){}</code>, <code>局部变量</code></li>
+</ul>
+<hr>
+<h4 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h4><p>由多个执行上下文的变量对象构成的链表就叫做作用域链。函数有一个内部属性 [[scope]]，当函数创建的时候，就会保存所有父变量对象到其中, [[scope]] 就是所有父变量对象的层级链<br>函数执行之前先创建一个 AO, 这个 AO 会被压入作用域链顶端,而函数的 scope 属性会被连接到后续的对象, 所以查找顺序是先从 AO 开始查找</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> scope = <span class="string">"global scope"</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkscope</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">var</span> scope2 = <span class="string">'local scope'</span>;</span><br><span class="line">    <span class="keyword">return</span> scope2;</span><br><span class="line">&#125;</span><br><span class="line">checkscope();</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<h5 id="创建-checkscope-函数-将父变量对象保存到内部-scope-属性"><a href="#创建-checkscope-函数-将父变量对象保存到内部-scope-属性" class="headerlink" title="创建 checkscope 函数, 将父变量对象保存到内部[[scope]]属性"></a>创建 <code>checkscope</code> 函数, 将父变量对象保存到内部<code>[[scope]]</code>属性</h5><figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">checkscope.<span class="string">[[scope]]</span> = [</span><br><span class="line">    globalContext.VO</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<h5 id="执行-checkscope-函数-创建执行上下文-将创建的上下文压入栈"><a href="#执行-checkscope-函数-创建执行上下文-将创建的上下文压入栈" class="headerlink" title="执行 checkscope 函数, 创建执行上下文, 将创建的上下文压入栈"></a>执行 <code>checkscope</code> 函数, 创建执行上下文, 将创建的上下文压入栈</h5><figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">ECStack</span> = [</span><br><span class="line">    checkscopeContext,</span><br><span class="line">    globalContext</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<h5 id="复制函数-scope-属性创建作用域链"><a href="#复制函数-scope-属性创建作用域链" class="headerlink" title="复制函数 [[scope]]属性创建作用域链"></a>复制函数 <code>[[scope]]</code>属性创建作用域链</h5><p>checkscope执行的时候，会复制这个作用域链，作为自己作用域链的初始化</p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">checkscopeContext = &#123;</span><br><span class="line">Scope: checkscope.<span class="string">[[scope]]</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="初始化变量对象-加入形参-函数声明-变量声明-根据环境生成变量对象"><a href="#初始化变量对象-加入形参-函数声明-变量声明-根据环境生成变量对象" class="headerlink" title="初始化变量对象, 加入形参, 函数声明, 变量声明, 根据环境生成变量对象."></a>初始化变量对象, 加入形参, 函数声明, 变量声明, 根据环境生成变量对象.</h5><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">checkscopeContext</span> = <span class="string">&#123;</span></span><br><span class="line">	<span class="attr">AO</span>: <span class="string">&#123;</span></span><br><span class="line">		<span class="attr">arguments</span>: <span class="string">&#123;</span></span><br><span class="line">			<span class="attr">length</span>: <span class="string">0</span></span><br><span class="line">		<span class="attr">&#125;,</span></span><br><span class="line">		<span class="attr">scope2</span>: <span class="string">undefined</span></span><br><span class="line">	<span class="attr">&#125;,</span></span><br><span class="line">	<span class="attr">Scope</span>: <span class="string">checkscope.[[scope]]</span></span><br><span class="line"><span class="attr">&#125;</span></span><br></pre></td></tr></table></figure>
 
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+<h5 id="然后将这个变量对象，添加到这个复制的作用域链，这才完整的构建了自己的作用域链。"><a href="#然后将这个变量对象，添加到这个复制的作用域链，这才完整的构建了自己的作用域链。" class="headerlink" title="然后将这个变量对象，添加到这个复制的作用域链，这才完整的构建了自己的作用域链。"></a>然后将这个变量对象，添加到这个复制的作用域链，这才完整的构建了自己的作用域链。</h5><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">checkscopeContext</span> = <span class="string">&#123;</span></span><br><span class="line">	<span class="attr">AO</span>: <span class="string">&#123;</span></span><br><span class="line">		<span class="attr">arguments</span>: <span class="string">&#123;</span></span><br><span class="line">			<span class="attr">length</span>: <span class="string">0</span></span><br><span class="line">		<span class="attr">&#125;,</span></span><br><span class="line">		<span class="attr">scope2</span>: <span class="string">undefined</span></span><br><span class="line">	<span class="attr">&#125;,</span></span><br><span class="line">	<span class="attr">Scope</span>: <span class="string">[AO, checkscope.[[scope]]]</span></span><br><span class="line"><span class="attr">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><pre><code>- 创建函数, 保存父级变量到内部属性scope
+- 函数执行, 创建函数执行上下文, 将上下文压入执行上下文栈
+- 函数上下文初始化
+  1. 复制函数的 scope 属性初始化作用域链
+  2. 使用 arguments 创建 AO
+  3. 初始化 AO
+  4. 将 AO 压入作用域链顶端
+  5. 函数执行完毕, 释放 AO, 函数执行上下文被弹出</code></pre><h4 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h4><ul>
+<li><p><a href="https://github.com/mqyqingfeng/Blog/issues/4" target="_blank" rel="noopener">https://github.com/mqyqingfeng/Blog/issues/4</a></p>
+<blockquote>
+<p>如有理解错误烦请指出</p>
+</blockquote>
+</li>
+</ul>
 
       
     </div>
@@ -450,7 +477,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://imaxing.github.io/blog/hello-world.html" title="Hello World">https://imaxing.github.io/blog/hello-world.html</a>
+    <a href="https://imaxing.github.io/blog/javascript%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.html" title="Javascript 中的执行上下文">https://imaxing.github.io/blog/javascript%E4%B8%AD%E7%9A%84%E6%89%A7%E8%A1%8C%E4%B8%8A%E4%B8%8B%E6%96%87.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -465,7 +492,7 @@
       
         <div class="post-tags">
           
-            <a href="/blog/tags/test/" rel="tag"># test</a>
+            <a href="/blog/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
       
@@ -478,8 +505,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92.html" rel="next" title="Javascript中的数据传递">
-                <i class="fa fa-chevron-left"></i> Javascript中的数据传递
+              <a href="/blog/javascript-this.html" rel="next" title="关于 JavaScript 中 This 的理解">
+                <i class="fa fa-chevron-left"></i> 关于 JavaScript 中 This 的理解
               </a>
             
           </div>
@@ -488,8 +515,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/blog/webpack-full-config.html" rel="prev" title="Webpack4 完整配置文件记录">
-                Webpack4 完整配置文件记录 <i class="fa fa-chevron-right"></i>
+              <a href="/blog/javascript%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92.html" rel="prev" title="Javascript中的数据传递">
+                Javascript中的数据传递 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -691,7 +718,7 @@ var jiathis_config={
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Quick-Start"><span class="nav-number">1.</span> <span class="nav-text">Quick Start</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Create-a-new-post"><span class="nav-number">1.1.</span> <span class="nav-text">Create a new post</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run-server"><span class="nav-number">1.2.</span> <span class="nav-text">Run server</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generate-static-files"><span class="nav-number">1.3.</span> <span class="nav-text">Generate static files</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deploy-to-remote-sites"><span class="nav-number">1.4.</span> <span class="nav-text">Deploy to remote sites</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#起步"><span class="nav-number">1.</span> <span class="nav-text">起步</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#执行上下文创建过程"><span class="nav-number">2.</span> <span class="nav-text">执行上下文创建过程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域链"><span class="nav-number">3.</span> <span class="nav-text">作用域链</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#创建-checkscope-函数-将父变量对象保存到内部-scope-属性"><span class="nav-number">3.1.</span> <span class="nav-text">创建 checkscope 函数, 将父变量对象保存到内部[[scope]]属性</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#执行-checkscope-函数-创建执行上下文-将创建的上下文压入栈"><span class="nav-number">3.2.</span> <span class="nav-text">执行 checkscope 函数, 创建执行上下文, 将创建的上下文压入栈</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#复制函数-scope-属性创建作用域链"><span class="nav-number">3.3.</span> <span class="nav-text">复制函数 [[scope]]属性创建作用域链</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#初始化变量对象-加入形参-函数声明-变量声明-根据环境生成变量对象"><span class="nav-number">3.4.</span> <span class="nav-text">初始化变量对象, 加入形参, 函数声明, 变量声明, 根据环境生成变量对象.</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#然后将这个变量对象，添加到这个复制的作用域链，这才完整的构建了自己的作用域链。"><span class="nav-number">3.5.</span> <span class="nav-text">然后将这个变量对象，添加到这个复制的作用域链，这才完整的构建了自己的作用域链。</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考"><span class="nav-number">5.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
 
           </div>
