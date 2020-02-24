@@ -7,7 +7,7 @@ tags:
  - webpack
 ---
 
-#### 此配置涵盖了目前 webpack4 的大部分配置, 方便查询
+#### 此配置涵盖了目前 webpack4 的大部分配置, 方便查询, 配置来源 [深入浅出 webpack](https://webpack.wuhaolin.cn/2%E9%85%8D%E7%BD%AE/2-8%E6%95%B4%E4%BD%93%E9%85%8D%E7%BD%AE%E7%BB%93%E6%9E%84.html)
 <!-- more -->
 ```javascript
 const path = require('path');
