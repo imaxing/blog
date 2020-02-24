@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <link href="//cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.css" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+
+  
+
+<link href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/blog/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="webpack," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="此配置涵盖了目前 webpack4 的大部分配置, 方便查询12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Webpack4 完整配置文件记录">
+<meta property="og:url" content="https://imaxing.github.io/blog/webpack-full-config.html">
+<meta property="og:site_name" content="cookie 大胖砸">
+<meta property="og:description" content="此配置涵盖了目前 webpack4 的大部分配置, 方便查询12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485868788899">
+<meta property="article:published_time" content="2020-02-24T09:51:12.000Z">
+<meta property="article:modified_time" content="2020-02-24T09:51:12.000Z">
+<meta property="article:author" content="Gexing">
+<meta property="article:tag" content="webpack">
+<meta name="twitter:card" content="summary">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://imaxing.github.io/blog/webpack-full-config.html"/>
+
+
+
+
+
+  <title>Webpack4 完整配置文件记录 | cookie 大胖砸</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?050bc97d43e075f24b99bb0fe04e6258";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">cookie 大胖砸</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">学习记录</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/blog/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/blog/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/blog/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/blog/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/blog/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://imaxing.github.io/blog/blog/webpack-full-config.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Gexing">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://tva1.sinaimg.cn/large/0082zybpgy1gc7dxfo4t4j30u00u04qp.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="cookie 大胖砸">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Webpack4 完整配置文件记录</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-24T17:51:12+08:00">
+                2020-02-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/webpack/" itemprop="url" rel="index">
+                    <span itemprop="name">webpack</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="此配置涵盖了目前-webpack4-的大部分配置-方便查询"><a href="#此配置涵盖了目前-webpack4-的大部分配置-方便查询" class="headerlink" title="此配置涵盖了目前 webpack4 的大部分配置, 方便查询"></a>此配置涵盖了目前 webpack4 的大部分配置, 方便查询</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>);</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="comment">// entry 表示 入口，Webpack 执行构建的第一步将从 Entry 开始，可抽象成输入。</span></span><br><span class="line">  <span class="comment">// 类型可以是 string | object | array   </span></span><br><span class="line">  entry: <span class="string">'./app/entry'</span>, <span class="comment">// 只有1个入口，入口只有1个文件</span></span><br><span class="line">  entry: [<span class="string">'./app/entry1'</span>, <span class="string">'./app/entry2'</span>], <span class="comment">// 只有1个入口，入口有2个文件</span></span><br><span class="line">  entry: &#123; <span class="comment">// 有2个入口</span></span><br><span class="line">    a: <span class="string">'./app/entry-a'</span>,</span><br><span class="line">    b: [<span class="string">'./app/entry-b1'</span>, <span class="string">'./app/entry-b2'</span>]</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 如何输出结果：在 Webpack 经过一系列处理后，如何输出最终想要的代码。</span></span><br><span class="line">  output: &#123;</span><br><span class="line">    <span class="comment">// 输出文件存放的目录，必须是 string 类型的绝对路径。</span></span><br><span class="line">    path: path.resolve(__dirname, <span class="string">'dist'</span>),</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 输出文件的名称</span></span><br><span class="line">    filename: <span class="string">'bundle.js'</span>, <span class="comment">// 完整的名称</span></span><br><span class="line">    filename: <span class="string">'[name].js'</span>, <span class="comment">// 当配置了多个 entry 时，通过名称模版为不同的 entry 生成不同的文件名称</span></span><br><span class="line">    filename: <span class="string">'[chunkhash].js'</span>, <span class="comment">// 根据文件内容 hash 值生成文件名称，用于浏览器长时间缓存文件</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 发布到线上的所有资源的 URL 前缀，string 类型</span></span><br><span class="line">    publicPath: <span class="string">'/assets/'</span>, <span class="comment">// 放到指定目录下</span></span><br><span class="line">    publicPath: <span class="string">''</span>, <span class="comment">// 放到根目录下</span></span><br><span class="line">    publicPath: <span class="string">'https://cdn.example.com/'</span>, <span class="comment">// 放到 CDN 上去</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">// 导出库的名称，string 类型</span></span><br><span class="line">    <span class="comment">// 不填它时，默认输出格式是匿名的立即执行函数</span></span><br><span class="line">    library: <span class="string">'MyLibrary'</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 导出库的类型，枚举类型，默认是 var</span></span><br><span class="line">    <span class="comment">// 可以是 umd | umd2 | commonjs2 | commonjs | amd | this | var | assign | window | global | jsonp ，</span></span><br><span class="line">    libraryTarget: <span class="string">'umd'</span>, </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 是否包含有用的文件路径信息到生成的代码里去，boolean 类型</span></span><br><span class="line">    pathinfo: <span class="literal">true</span>, </span><br><span class="line"></span><br><span class="line">    <span class="comment">// 附加 Chunk 的文件名称</span></span><br><span class="line">    chunkFilename: <span class="string">'[id].js'</span>,</span><br><span class="line">    chunkFilename: <span class="string">'[chunkhash].js'</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// JSONP 异步加载资源时的回调函数名称，需要和服务端搭配使用</span></span><br><span class="line">    jsonpFunction: <span class="string">'myWebpackJsonp'</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 生成的 Source Map 文件名称</span></span><br><span class="line">    sourceMapFilename: <span class="string">'[file].map'</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 浏览器开发者工具里显示的源码模块名称</span></span><br><span class="line">    devtoolModuleFilenameTemplate: <span class="string">'webpack:///[resource-path]'</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 异步加载跨域的资源时使用的方式</span></span><br><span class="line">    crossOriginLoading: <span class="string">'use-credentials'</span>,</span><br><span class="line">    crossOriginLoading: <span class="string">'anonymous'</span>,</span><br><span class="line">    crossOriginLoading: <span class="literal">false</span>,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 配置模块相关</span></span><br><span class="line">  <span class="built_in">module</span>: &#123;</span><br><span class="line">    rules: [ <span class="comment">// 配置 Loader</span></span><br><span class="line">      &#123;  </span><br><span class="line">        test: <span class="regexp">/\.jsx?$/</span>, <span class="comment">// 正则匹配命中要使用 Loader 的文件</span></span><br><span class="line">        include: [ <span class="comment">// 只会命中这里面的文件</span></span><br><span class="line">          path.resolve(__dirname, <span class="string">'app'</span>)</span><br><span class="line">        ],</span><br><span class="line">        exclude: [ <span class="comment">// 忽略这里面的文件</span></span><br><span class="line">          path.resolve(__dirname, <span class="string">'app/demo-files'</span>)</span><br><span class="line">        ],</span><br><span class="line">        use: [ <span class="comment">// 使用那些 Loader，有先后次序，从后往前执行</span></span><br><span class="line">          <span class="string">'style-loader'</span>, <span class="comment">// 直接使用 Loader 的名称</span></span><br><span class="line">          &#123;</span><br><span class="line">            loader: <span class="string">'css-loader'</span>,      </span><br><span class="line">            options: &#123; <span class="comment">// 给 html-loader 传一些参数</span></span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        ]</span><br><span class="line">      &#125;,</span><br><span class="line">    ],</span><br><span class="line">    noParse: [ <span class="comment">// 不用解析和处理的模块</span></span><br><span class="line">      /special-library\.js$/  <span class="comment">// 用正则匹配</span></span><br><span class="line">    ],</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 配置插件</span></span><br><span class="line">  plugins: [</span><br><span class="line">  ],</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 配置寻找模块的规则</span></span><br><span class="line">  resolve: &#123; </span><br><span class="line">    modules: [ <span class="comment">// 寻找模块的根目录，array 类型，默认以 node_modules 为根目录</span></span><br><span class="line">      <span class="string">'node_modules'</span>,</span><br><span class="line">      path.resolve(__dirname, <span class="string">'app'</span>)</span><br><span class="line">    ],</span><br><span class="line">    extensions: [<span class="string">'.js'</span>, <span class="string">'.json'</span>, <span class="string">'.jsx'</span>, <span class="string">'.css'</span>], <span class="comment">// 模块的后缀名</span></span><br><span class="line">    alias: &#123; <span class="comment">// 模块别名配置，用于映射模块</span></span><br><span class="line">       <span class="comment">// 把 'module' 映射 'new-module'，同样的 'module/path/file' 也会被映射成 'new-module/path/file'</span></span><br><span class="line">      <span class="string">'module'</span>: <span class="string">'new-module'</span>,</span><br><span class="line">      <span class="comment">// 使用结尾符号 $ 后，把 'only-module' 映射成 'new-module'，</span></span><br><span class="line">      <span class="comment">// 但是不像上面的，'module/path/file' 不会被映射成 'new-module/path/file'</span></span><br><span class="line">      <span class="string">'only-module$'</span>: <span class="string">'new-module'</span>, </span><br><span class="line">    &#125;,</span><br><span class="line">    alias: [ <span class="comment">// alias 还支持使用数组来更详细的配置</span></span><br><span class="line">      &#123;</span><br><span class="line">        name: <span class="string">'module'</span>, <span class="comment">// 老的模块</span></span><br><span class="line">        alias: <span class="string">'new-module'</span>, <span class="comment">// 新的模块</span></span><br><span class="line">        <span class="comment">// 是否是只映射模块，如果是 true 只有 'module' 会被映射，如果是 false 'module/inner/path' 也会被映射</span></span><br><span class="line">        onlyModule: <span class="literal">true</span>, </span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    symlinks: <span class="literal">true</span>, <span class="comment">// 是否跟随文件软链接去搜寻模块的路径</span></span><br><span class="line">    descriptionFiles: [<span class="string">'package.json'</span>], <span class="comment">// 模块的描述文件</span></span><br><span class="line">    mainFields: [<span class="string">'main'</span>], <span class="comment">// 模块的描述文件里的描述入口的文件的字段名称</span></span><br><span class="line">    enforceExtension: <span class="literal">false</span>, <span class="comment">// 是否强制导入语句必须要写明文件后缀</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 输出文件性能检查配置</span></span><br><span class="line">  performance: &#123; </span><br><span class="line">    hints: <span class="string">'warning'</span>, <span class="comment">// 有性能问题时输出警告</span></span><br><span class="line">    hints: <span class="string">'error'</span>, <span class="comment">// 有性能问题时输出错误</span></span><br><span class="line">    hints: <span class="literal">false</span>, <span class="comment">// 关闭性能检查</span></span><br><span class="line">    maxAssetSize: <span class="number">200000</span>, <span class="comment">// 最大文件大小 (单位 bytes)</span></span><br><span class="line">    maxEntrypointSize: <span class="number">400000</span>, <span class="comment">// 最大入口文件大小 (单位 bytes)</span></span><br><span class="line">    assetFilter: <span class="function"><span class="keyword">function</span>(<span class="params">assetFilename</span>) </span>&#123; <span class="comment">// 过滤要检查的文件</span></span><br><span class="line">      <span class="keyword">return</span> assetFilename.endsWith(<span class="string">'.css'</span>) || assetFilename.endsWith(<span class="string">'.js'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  devtool: <span class="string">'source-map'</span>, <span class="comment">// 配置 source-map 类型</span></span><br><span class="line"></span><br><span class="line">  context: __dirname, <span class="comment">// Webpack 使用的根目录，string 类型必须是绝对路径</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">// 配置输出代码的运行环境</span></span><br><span class="line">  target: <span class="string">'web'</span>, <span class="comment">// 浏览器，默认</span></span><br><span class="line">  target: <span class="string">'webworker'</span>, <span class="comment">// WebWorker</span></span><br><span class="line">  target: <span class="string">'node'</span>, <span class="comment">// Node.js，使用 `require` 语句加载 Chunk 代码</span></span><br><span class="line">  target: <span class="string">'async-node'</span>, <span class="comment">// Node.js，异步加载 Chunk 代码</span></span><br><span class="line">  target: <span class="string">'node-webkit'</span>, <span class="comment">// nw.js</span></span><br><span class="line">  target: <span class="string">'electron-main'</span>, <span class="comment">// electron, 主线程</span></span><br><span class="line">  target: <span class="string">'electron-renderer'</span>, <span class="comment">// electron, 渲染线程</span></span><br><span class="line"></span><br><span class="line">  externals: &#123; <span class="comment">// 使用来自 JavaScript 运行环境提供的全局变量</span></span><br><span class="line">    jquery: <span class="string">'jQuery'</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  stats: &#123; <span class="comment">// 控制台输出日志控制</span></span><br><span class="line">    assets: <span class="literal">true</span>,</span><br><span class="line">    colors: <span class="literal">true</span>,</span><br><span class="line">    errors: <span class="literal">true</span>,</span><br><span class="line">    errorDetails: <span class="literal">true</span>,</span><br><span class="line">    hash: <span class="literal">true</span>,</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  devServer: &#123; <span class="comment">// DevServer 相关的配置</span></span><br><span class="line">    proxy: &#123; <span class="comment">// 代理到后端服务接口</span></span><br><span class="line">      <span class="string">'/api'</span>: <span class="string">'http://localhost:3000'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    contentBase: path.join(__dirname, <span class="string">'public'</span>), <span class="comment">// 配置 DevServer HTTP 服务器的文件根目录</span></span><br><span class="line">    compress: <span class="literal">true</span>, <span class="comment">// 是否开启 gzip 压缩</span></span><br><span class="line">    historyApiFallback: <span class="literal">true</span>, <span class="comment">// 是否开发 HTML5 History API 网页</span></span><br><span class="line">    hot: <span class="literal">true</span>, <span class="comment">// 是否开启模块热替换功能</span></span><br><span class="line">    https: <span class="literal">false</span>, <span class="comment">// 是否开启 HTTPS 模式</span></span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    profile: <span class="literal">true</span>, <span class="comment">// 是否捕捉 Webpack 构建的性能信息，用于分析什么原因导致构建性能不佳</span></span><br><span class="line"></span><br><span class="line">    cache: <span class="literal">false</span>, <span class="comment">// 是否启用缓存提升构建速度</span></span><br><span class="line"></span><br><span class="line">    watch: <span class="literal">true</span>, <span class="comment">// 是否开始</span></span><br><span class="line">    watchOptions: &#123; <span class="comment">// 监听模式选项</span></span><br><span class="line">    <span class="comment">// 不监听的文件或文件夹，支持正则匹配。默认为空</span></span><br><span class="line">    ignored: <span class="regexp">/node_modules/</span>,</span><br><span class="line">    <span class="comment">// 监听到变化发生后会等300ms再去执行动作，防止文件更新太快导致重新编译频率太高</span></span><br><span class="line">    <span class="comment">// 默认为300ms </span></span><br><span class="line">    aggregateTimeout: <span class="number">300</span>,</span><br><span class="line">    <span class="comment">// 判断文件是否发生变化是不停的去询问系统指定文件有没有变化，默认每隔1000毫秒询问一次</span></span><br><span class="line">    poll: <span class="number">1000</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>Donate comment here</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="https://tva1.sinaimg.cn/large/0082zybpgy1gc7gqxp3prj30ly0lsn28.jpg" alt="Gexing 微信支付"/>
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="https://tva1.sinaimg.cn/large/0082zybpgy1gc7grlsc0vj30m00lgjzu.jpg" alt="Gexing 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    Gexing
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://imaxing.github.io/blog/webpack-full-config.html" title="Webpack4 完整配置文件记录">https://imaxing.github.io/blog/webpack-full-config.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/blog/tags/webpack/" rel="tag"># webpack</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/hello-world.html" rel="next" title="Hello World">
+                <i class="fa fa-chevron-left"></i> Hello World
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        <!-- JiaThis Button BEGIN -->
+<div class="jiathis_style">
+<span class="jiathis_txt">分享到：</span>
+<a class="jiathis_button_fav">收藏夹</a>
+<a class="jiathis_button_copy">复制网址</a>
+<a class="jiathis_button_email">邮件</a>
+<a class="jiathis_button_weixin">微信</a>
+<a class="jiathis_button_qzone">QQ空间</a>
+<a class="jiathis_button_tqq">腾讯微博</a>
+<a class="jiathis_button_douban">豆瓣</a>
+<a class="jiathis_button_share">一键分享</a>
+
+<a href="http://www.jiathis.com/share?uid=2140465" class="jiathis jiathis_txt jiathis_separator jtico jtico_jiathis" target="_blank">更多</a>
+<a class="jiathis_counter_style"></a>
+</div>
+<script type="text/javascript" >
+var jiathis_config={
+  data_track_clickback:true,
+  summary:"",
+  shortUrl:false,
+  hideMore:false
+}
+</script>
+<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=" charset="utf-8"></script>
+<!-- JiaThis Button END -->
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://tva1.sinaimg.cn/large/0082zybpgy1gc7dxfo4t4j30u00u04qp.jpg"
+                alt="Gexing" />
+            
+              <p class="site-author-name" itemprop="name">Gexing</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/blog/archives/%7C%7C%20archive">
+              
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/blog/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/blog/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/imaxing" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="imaxing@126.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://segmentfault.com/u/webxing" target="_blank" title="Segmentfault">
+                      
+                        <i class="fa fa-fw fa-globe"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://iluoy.com/" title="粗暴的熊猫" target="_blank">粗暴的熊猫</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#此配置涵盖了目前-webpack4-的大部分配置-方便查询"><span class="nav-number">1.</span> <span class="nav-text">此配置涵盖了目前 webpack4 的大部分配置, 方便查询</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Gexing</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.1/velocity.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/velocity/1.2.1/velocity.ui.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/blog/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/blog/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/blog/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/blog/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+  <script type="text/javascript" src="/blog/js/src/js.cookie.js?v=5.1.4"></script>
+  <script type="text/javascript" src="/blog/js/src/scroll-cookie.js?v=5.1.4"></script>
+
+
+  
+
+</body>
+</html>
