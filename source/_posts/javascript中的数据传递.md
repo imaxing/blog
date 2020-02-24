@@ -16,6 +16,7 @@ categories:
 #### 基础知识都知道, 在 ECMA2015 中 javascript 数据类型分为两种
 - 基础类型: 比如Undefined, Null, Boolean, Number, String。
 - 引用类型: 比如Object, Array, Function, Date等。
+<!--more-->
 ---
 #### javascript对不同的数据类型有不同的分配内存方式
 
