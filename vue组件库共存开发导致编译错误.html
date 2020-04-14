@@ -102,11 +102,19 @@
 
 <meta name="description" content="在 vue 组件库中, elementUI 是一个质量相对很高的组件库了, 组件比较全面也很好用但在我使用el-dialog与el-drawer组件的并且出现多级嵌套的时候问题就来了, 经常遇到遮罩层无法关闭, 子弹窗在父弹窗的下面的情况, 也查了很多遍官方文档, 例如官方文档是使用 append-to-body与modal-append-to-body去解决这个问题, 但仍然无法根治, 但是项">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue组件库共存开发导致编译错误">
+<meta property="og:title" content="Vue组件库共存开发导致编译错误的解决过程">
 <meta property="og:url" content="https://imaxing.github.io/blog/vue%E7%BB%84%E4%BB%B6%E5%BA%93%E5%85%B1%E5%AD%98%E5%BC%80%E5%8F%91%E5%AF%BC%E8%87%B4%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF.html">
 <meta property="og:site_name" content="cookie 大胖砸">
 <meta property="og:description" content="在 vue 组件库中, elementUI 是一个质量相对很高的组件库了, 组件比较全面也很好用但在我使用el-dialog与el-drawer组件的并且出现多级嵌套的时候问题就来了, 经常遇到遮罩层无法关闭, 子弹窗在父弹窗的下面的情况, 也查了很多遍官方文档, 例如官方文档是使用 append-to-body与modal-append-to-body去解决这个问题, 但仍然无法根治, 但是项">
 <meta property="og:image" content="https://vuejsexamples.com/content/images/2016/08/20160827214833.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdthydia7sj31380d4q3x.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdti3f2y5ij307i04n3yr.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdti8kogokj30mj06vq3t.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtib7nqkcj30kt0afab2.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtie1poqpj30j60ccabs.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtier1ugmj30km0aujs8.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtihkxrgwj30vw0fyjtk.jpg">
+<meta property="og:image" content="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtiitr8q7j306o06owey.jpg">
 <meta property="article:published_time" content="2020-04-14T10:46:31.000Z">
 <meta property="article:modified_time" content="2020-04-14T10:46:31.000Z">
 <meta property="article:author" content="Gexing">
@@ -152,7 +160,7 @@
 
 
 
-  <title>Vue组件库共存开发导致编译错误 | cookie 大胖砸</title>
+  <title>Vue组件库共存开发导致编译错误的解决过程 | cookie 大胖砸</title>
   
 
 
@@ -316,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Vue组件库共存开发导致编译错误</h1>
+          <h1 class="post-title" itemprop="name headline">Vue组件库共存开发导致编译错误的解决过程</h1>
         
 
         <div class="post-meta">
@@ -417,11 +425,26 @@
 
       
         <p><img src="https://vuejsexamples.com/content/images/2016/08/20160827214833.jpg" alt="ant-design-vue"></p>
-<p><strong>在 vue 组件库中, elementUI 是一个质量相对很高的组件库了, 组件比较全面也很好用<br>但在我使用<code>el-dialog</code>与<code>el-drawer</code>组件的并且出现多级嵌套的时候问题就来了, 经常遇到遮罩层无法关闭, 子弹窗在父弹窗的下面的情况, 也查了很多遍官方文档, 例如官方文档是使用 <code>append-to-body</code>与<code>modal-append-to-body</code>去解决这个问题, 但仍然无法根治, 但是项目初期就是选择的 elementUI 的组件库, 目前想去替换掉的话显然是不现实的, 所以只好考虑兼容的办法, 单独定义弹窗和抽屉组件到自己的组件库中进行使用</strong></p>
+<p><strong>在 vue 组件库中, elementUI 是一个质量相对很高的组件库了, 组件比较全面也很好用<br>但在我使用<code>el-dialog</code>与<code>el-drawer</code>组件的并且出现多级嵌套的时候问题就来了, 经常遇到遮罩层无法关闭, 子弹窗在父弹窗的下面的情况, 也查了很多遍官方文档, 例如官方文档是使用 <code>append-to-body</code>与<code>modal-append-to-body</code>去解决这个问题, 但仍然无法根治, 但是项目初期就是选择的 <code>elementUI</code> 的组件库, 目前想去替换掉的话显然是不现实的, 所以只好考虑兼容的办法, 单独定义弹窗和抽屉组件到自己的组件库中进行使用</strong></p>
 <a id="more"></a>
 
-
-
+<p><strong>先贴出错误截图</strong></p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdthydia7sj31380d4q3x.jpg" alt=""></p>
+<p>遇到这个问题的时候我也是一脸懵逼, 正常来讲 $attrs与$listeners 是动态绑定属性不会去进行修改操作的,  为何 vue 会提示这个警告?? 于是我进行资料查询</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdti3f2y5ij307i04n3yr.jpg" alt=""></p>
+<p>首先找到了这个文章看了下</p>
+<p><a href="https://juejin.im/post/5d5b8959f265da039b249b2f" target="_blank" rel="noopener">Vue 踩坑： [Vue warn]: $attrs is readonly，[Vue warn]: $listeners is readonly</a></p>
+<p>这个大佬遇到的问题是出现了两次去 new Vue 的操作, 但是我并没有这个操作, 所以直接抬走下一个</p>
+<hr>
+<p>然后在 elementUI 的 issues 里面找到一个类似问题</p>
+<p><a href="https://github.com/ElemeFE/element/issues/7690" target="_blank" rel="noopener">#7690</a></p>
+<p>有个大佬说是多个组件库混用导致的, 这可不就是我的情况吗~~<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdti8kogokj30mj06vq3t.jpg" alt=""></p>
+<p>看提到的解决办法把 ant-design-vue 加入到模块白名单列表就完事了, 可是我特么找遍 webpack 文档也没找到 <code>whiteListedModules</code>配置字段<br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtib7nqkcj30kt0afab2.jpg" alt=""><br>仔细一看原来是 <code>electron-vue</code>的配置, 然后我查了下其实这个字段就是webpack 中的 externals 配置<br>, 继续查(问大佬)~</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtie1poqpj30j60ccabs.jpg" alt=""><br><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtier1ugmj30km0aujs8.jpg" alt=""></p>
+<p>看到这些人说的其实还是跟第一个掘金大佬遇到的情况是相同的, 解决办法就是统一下 vue 的加载路径, 试一下在 vue.config.js 加入下面的配置</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtihkxrgwj30vw0fyjtk.jpg" alt=""></p>
+<p>重新跑一下还真特么解决了</p>
+<p><img src="https://tva1.sinaimg.cn/large/007S8ZIlgy1gdtiitr8q7j306o06owey.jpg" alt=""></p>
 
       
     </div>
@@ -471,7 +494,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://imaxing.github.io/blog/vue%E7%BB%84%E4%BB%B6%E5%BA%93%E5%85%B1%E5%AD%98%E5%BC%80%E5%8F%91%E5%AF%BC%E8%87%B4%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF.html" title="Vue组件库共存开发导致编译错误">https://imaxing.github.io/blog/vue%E7%BB%84%E4%BB%B6%E5%BA%93%E5%85%B1%E5%AD%98%E5%BC%80%E5%8F%91%E5%AF%BC%E8%87%B4%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF.html</a>
+    <a href="https://imaxing.github.io/blog/vue%E7%BB%84%E4%BB%B6%E5%BA%93%E5%85%B1%E5%AD%98%E5%BC%80%E5%8F%91%E5%AF%BC%E8%87%B4%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF.html" title="Vue组件库共存开发导致编译错误的解决过程">https://imaxing.github.io/blog/vue%E7%BB%84%E4%BB%B6%E5%BA%93%E5%85%B1%E5%AD%98%E5%BC%80%E5%8F%91%E5%AF%BC%E8%87%B4%E7%BC%96%E8%AF%91%E9%94%99%E8%AF%AF.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
