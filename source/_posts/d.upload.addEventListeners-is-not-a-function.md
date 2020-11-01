@@ -1,4 +1,4 @@
-\---
+---
 
 layout: d.upload.addEventListeners is not a function
 
@@ -14,7 +14,7 @@ tags:
 
   d.upload.addEventListeners is not a function
 
-\---
+---
 
 
 
