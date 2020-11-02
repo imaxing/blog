@@ -1,36 +1,29 @@
 ---
-
-layout: d.upload.addEventListeners is not a function
-
-title: function
+title: 记录一次线上 bug
 
 date: 2020-11-01 18:46:00
 
 tags:
 
-  element-ui
+  - element-ui
 
-  el-upload
+  - el-upload
 
-  d.upload.addEventListeners is not a function
-
+  - d.upload.addEventListeners is not a function
+categories:
+  - element-ui
 ---
 
 
 
-**
-
  上线后的项目出现了 el-upload 组件上传没反应的问题, 浏览了一遍代码, 在开发环境也没有任何问题(这就很程序了)
 
-仔细排查一波, 终于 catch 到了一个错误信息, 如标题所写
+仔细排查一波, 终于 catch 到了一个错误信息
 
 ```d.upload.addEventListeners is not a function```
 
- *<!--more-->*
+ <!--more-->
 
-**
-
-****
 
 
 
@@ -62,9 +55,8 @@ tags:
 >
 > 这个模板是开源的, 因为这个模板是发布在线上方便大家进行预览效果的,里面包含了一些登录,用户权限等基础功能,所以用到了一些接口
 >
-> ---
->
-> ![](https://tva1.sinaimg.cn/large/0081Kckwgy1gk9vyn9qutj310o0g4q5f.jpg)
+
+![](https://tva1.sinaimg.cn/large/0081Kckwgy1gk9vyn9qutj310o0g4q5f.jpg)
 
 
 
