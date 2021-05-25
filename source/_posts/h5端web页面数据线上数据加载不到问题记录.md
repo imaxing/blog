@@ -2,9 +2,9 @@
 title: h5端web页面数据线上数据加载不到问题记录
 date: 2021-05-25 17:05:58
 categories:
-  - Mac
+  - bridge
 tags:
-  - Mac
+  - js
 ---
 
 ![](https://tva1.sinaimg.cn/large/008i3skNly1gqusdlc6f8j313q0oadza.jpg)
